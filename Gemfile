@@ -7,7 +7,9 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'puma', '~> 4.1'
 gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
+
 gem 'devise'
+gem 'devise-i18n'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
