@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 gem 'devise-i18n'
-gem 'russian'
+gem 'rails-i18n', '~> 6.0.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
