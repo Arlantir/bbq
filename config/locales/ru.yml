@@ -29,3 +29,10 @@ ru:
   # Перевод app
   name: 'Шашлыки'
   company: 'Не очень хороший программист'
+  # Перевод ошибок
+  errors:
+    messages:
+      one: '%{count} ошибка'
+      few: '%{count} ошибки'
+      many: '%{count} ошибок'
+
