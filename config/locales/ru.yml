@@ -43,6 +43,7 @@ ru:
       sign_in: 'Войти'
       sign_up: 'Зарегистрироваться'
       reset_password: 'Сбросить пароль'
+    data_confirm: 'Вы уверены?'
   # Перевод линков
   views:
     application:
@@ -58,6 +59,7 @@ ru:
       edit: 'Изменить'
       create: 'Создать событие'
       back: 'вернуться'
+      delete: 'Удалить событие'
   # Перевод devise
   devise:
     sign_in: 'Войти'

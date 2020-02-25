@@ -32,7 +32,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: I18n.t('controllers.events.updates') }
+        format.html { redirect_to @event, notice: I18n.t('controllers.events.updated') }
       else
         format.html { render :edit }
       end
