@@ -20,12 +20,12 @@
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item"><%= link_to 'Профиль', current_user, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'Выйти', destroy_user_session_path, class: 'nav-link',
+          <li class="nav-item"><%= link_to t('views.application.profile'), current_user, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to t('views.application.sign_out'), destroy_user_session_path, class: 'nav-link',
                           method: :delete %></li>
         <% else %>
-          <li class="nav-item"><%= link_to 'Войти', new_user_session_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'Зарегистрироваться',
+          <li class="nav-item"><%= link_to t('views.application.sign_in'), new_user_session_path, class: 'nav-link' %></li>
+          <li class="nav-item"><%= link_to t('views.application.registartion'),
                           new_user_registration_path,  class: 'nav-link' %></li>
         <% end %>
       </ul>

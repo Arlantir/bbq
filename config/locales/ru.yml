@@ -35,4 +35,31 @@ ru:
       one: '%{count} ошибка'
       few: '%{count} ошибки'
       many: '%{count} ошибок'
-
+  # Перевод кнопок
+  helpers:
+    submit:
+      save: 'Сохранить'
+      delete_account: 'Удалить аккаунт'
+      sign_in: 'Войти'
+      sign_up: 'Зарегистрироваться'
+      reset_password: 'Сбросить пароль'
+  # Перевод линков
+  views:
+    application:
+      profile: 'Профиль'
+      sign_out: 'Выйти'
+      sign_in: 'Войти'
+      registartion: 'Зарегистрироваться'
+    users:
+      back: 'вернуться'
+      update_password: 'Сменить пароль'
+      edit_profile: 'Редактировать профиль'
+    events:
+      edit: 'Изменить'
+      create: 'Создать событие'
+      back: 'вернуться'
+  # Перевод devise
+  devise:
+    sign_in: 'Войти'
+    registartion: 'Регистрация'
+    forgot_password: 'Забыли пароль?'
