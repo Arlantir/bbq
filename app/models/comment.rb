@@ -2,9 +2,12 @@ class Comment < ApplicationRecord
   belongs_to :event
   belongs_to :user
 
-  validates :event, :body, presence: true
+  # Не может быть комментария без события
+  validates  :event, presence: true
+  # Пустой комментарий тоже недопустим
+  validates :body, presence: true
 
-  validates :user_name, presence: true, unless: 'user.present?'
+  validates :user_name, presence: true, unless: -> { user.present? }
 
   def user_name
     if user.present?
