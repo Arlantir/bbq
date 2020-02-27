@@ -5,7 +5,6 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
-
     # Перевод атрибутов моделей
     attributes:
       user:
@@ -33,39 +32,77 @@ ru:
   # Перевод app
   name: 'Шашлыки'
   company: 'Не очень хороший программист'
+  profile: 'Профиль'
+  sign_out: 'Выйти'
+  sign_in: 'Войти'
+  registartion: 'Зарегистрироваться'
   # Перевод ошибок
   errors:
     messages:
-      one: '%{count} ошибка'
-      few: '%{count} ошибки'
-      many: '%{count} ошибок'
-  # Перевод кнопок
-  helpers:
-    submit:
-      save: 'Сохранить'
-      delete_account: 'Удалить аккаунт'
-      sign_in: 'Войти'
-      sign_up: 'Зарегистрироваться'
-      reset_password: 'Сбросить пароль'
-    data_confirm: 'Вы уверены?'
-  # Перевод линков
-  views:
-    application:
-      profile: 'Профиль'
-      sign_out: 'Выйти'
-      sign_in: 'Войти'
-      registartion: 'Зарегистрироваться'
-    users:
-      back: 'вернуться'
+      one: 'В вашей форме %{count} ошибка'
+      few: 'В вашей форме %{count} ошибки'
+      many: 'В вашей форме %{count} ошибок'
+  # Перевод вьюшек
+  users:
+    show:
+      edit: 'Редактировать профиль'
+      header: 'Организовал:'
+      text: 'Пользователь пока не организовал ни одного события'
+    edit:
+      header: 'Редактирование профиля'
       update_password: 'Сменить пароль'
-      edit_profile: 'Редактировать профиль'
-    events:
-      edit: 'Изменить'
-      create: 'Создать событие'
+    form:
+      submit: 'Сохранить'
       back: 'вернуться'
+  events:
+    form:
+      submit: 'Сохранить'
+      back: 'вернуться'
+    edit:
+      header: 'Редактирование события'
+    index:
+      header: 'События'
+      create: 'Создать событие'
+    new:
+      header: 'Новое событие'
+    show:
+      edit: 'Изменить'
       delete: 'Удалить событие'
+      confirm: 'Вы точно хотите удалить событие?'
   # Перевод devise
   devise:
-    sign_in: 'Войти'
-    registartion: 'Регистрация'
-    forgot_password: 'Забыли пароль?'
+    passwords:
+      edit:
+        header: 'Изменить пароль'
+        submit: 'Изменить пароль'
+        pas_length_one: 'Не менее'
+        pas_length_two: 'символов'
+      new:
+        header: 'Забыли пароль?'
+        reset_password: 'Сбросить пароль'
+    registrations:
+      edit:
+        header: 'Сменить пароль'
+        currently: 'В настоящее время ожидает подтверждения для:'
+        pas_length_one: 'Не менее'
+        pas_length_two: 'символов'
+        field_none: 'оставте пустым, если не хотите его менять'
+        pas_confirm: 'текущий пароль для подтверждения изменений'
+        update: 'Обновить'
+        delete_account: 'Удалить аккаунт'
+        confirm: 'Вы уверены?'
+        back: 'назад'
+      new:
+        header: 'Регистрация'
+        pas_length_one: 'Не менее'
+        pas_length_two: 'символов'
+        sign_up: 'Зарегистрироваться'
+    sessions:
+      new:
+        header: 'Войти на сайт'
+        sign_in: 'Войти'
+    shared:
+      links:
+        sign_in: 'Войти'
+        registartion: 'Регистрация'
+        forgot_password: 'Забыли пароль?'

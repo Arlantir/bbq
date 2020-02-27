@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-4 col-sm-6 col-6">
 
-    <h2>Регистрация</h2>
+    <h2><%= t('.header') %></h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render partial: 'partials/form_errors', locals: {model: @user} %>
 
@@ -13,7 +13,7 @@
       <div class="form-group">
         <%= f.label :password, class: 'font-weight-bold' %>
         <% if @minimum_password_length %>
-        <em>(Не менее <%= @minimum_password_length %> символов)</em>
+        <em>(<%=  t('pas_length_one'); @minimum_password_length;  t('.pas_length_two') %>)</em>
         <% end %>
         <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
       </div>
@@ -25,7 +25,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit t('helpers.submit.sign_up'), class: 'btn btn-outline-primary' %>
+        <%= f.submit t('.sign_up'), class: 'btn btn-outline-primary' %>
       </div>
     <% end %>
 

@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-lg-4 col-sm-6 col-6">
-    <h2>Войти на сайт</h2>
+    <h2><%= t('.header') %></h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -22,7 +22,7 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit t('helpers.submit.sign_in'), class: 'btn btn-outline-primary' %>
+        <%= f.submit t('.sign_in'), class: 'btn btn-outline-primary' %>
       </div>
     <% end %>
 
