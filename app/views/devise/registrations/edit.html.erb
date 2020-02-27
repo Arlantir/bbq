@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-lg-4 col-sm-6 col-6">
 
-    <h2>Сменить пароль</h2>
+    <h2><%= t('.header') %></h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :put}) do |f| %>
       <%= render partial: 'partials/form_errors', locals: {model: @user} %>
@@ -12,16 +12,16 @@
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <div><%= t('.currently') resource.unconfirmed_email %></div>
       <% end %>
 
       <div class="form-group">
         <%= f.label :password, class: 'font-weight-bold' %>
         <% if @minimum_password_length %>
-          <em>(Не менее <%= @minimum_password_length %> символов)</em>
+          <em>(<%= t('.pas_length_one') @minimum_password_length t('.pas_length_two') %>)</em>
         <% end %>
         <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
-        <small class="form-text text-muted">(оставте пустым, если не хотите его менять)</small>
+        <small class="form-text text-muted">(<%= t('.field_none') %>)</small>
       </div>
 
       <div class="form-group">
@@ -32,18 +32,18 @@
       <div class="form-group">
         <%= f.label :current_password, class: 'font-weight-bold' %>
         <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
-        <small class="form-text text-muted">(текущий пароль для подтверждения изменений)</small>
+        <small class="form-text text-muted">(<%= t('.pas_confirm') %>)</small>
       </div>
 
       <div class="actions">
-        <%= f.submit t('helpers.submit.update'), class: 'btn btn-outline-primary' %>
+        <%= f.submit t('.update'), class: 'btn btn-outline-primary' %>
       </div>
     <% end %>
 
-    <%= button_to t('helpers.submit.delete_account'), registration_path(resource_name), data: {confirm: "Вы уверены?"},
+    <%= button_to t('.delete_account'), registration_path(resource_name), data: {confirm: t('.confirm')},
                   class: 'btn btn-outline-danger buffer-both', method: :delete %>
 
-    <%= link_to t('views.users.back'), :back %>
+    <%= link_to t('.back'), :back %>
 
   </div>
 </div>

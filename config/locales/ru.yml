@@ -5,7 +5,6 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
-
     # Перевод атрибутов моделей
     attributes:
       user:
@@ -32,17 +31,9 @@ ru:
   # Перевод ошибок
   errors:
     messages:
-      one: '%{count} ошибка'
-      few: '%{count} ошибки'
-      many: '%{count} ошибок'
-  # Перевод кнопок
-  helpers:
-    submit:
-      save: 'Сохранить'
-      delete_account: 'Удалить аккаунт'
-      sign_in: 'Войти'
-      sign_up: 'Зарегистрироваться'
-      reset_password: 'Сбросить пароль'
+      one: 'В вашей форме %{count} ошибка'
+      few: 'В вашей форме %{count} ошибки'
+      many: 'В вашей форме %{count} ошибок'
   # Перевод линков
   views:
     application:
@@ -51,15 +42,61 @@ ru:
       sign_in: 'Войти'
       registartion: 'Зарегистрироваться'
     users:
-      back: 'вернуться'
-      update_password: 'Сменить пароль'
-      edit_profile: 'Редактировать профиль'
+      show:
+        edit: 'Редактировать профиль'
+        header: 'Организовал:'
+        text: 'Пользователь пока не организовал ни одного события'
+      edit:
+        header: 'Редактирование профиля'
+        update_password: 'Сменить пароль'
+      form:
+        submit: 'Сохранить'
+        back: 'вернуться'
     events:
-      edit: 'Изменить'
-      create: 'Создать событие'
-      back: 'вернуться'
-  # Перевод devise
-  devise:
-    sign_in: 'Войти'
-    registartion: 'Регистрация'
-    forgot_password: 'Забыли пароль?'
+      form:
+        submit: 'Сохранить'
+        back: 'вернуться'
+      edit:
+        header: 'Редактирование события'
+      index:
+        header: 'События'
+        create: 'Создать событие'
+      new:
+        header: 'Новое событие'
+      show:
+        edit: 'Изменить'
+    # Перевод devise
+    devise:
+      passwords:
+        new:
+          header: 'Забыли пароль?'
+          reset_password: 'Сбросить пароль'
+      registrations:
+        edit:
+          header: 'Сменить пароль'
+          currently: 'В настоящее время ожидает подтверждения для:'
+          pas_length_one: 'Не менее'
+          pas_length_two: 'символов'
+          field_none: 'оставте пустым, если не хотите его менять'
+          pas_confirm: 'текущий пароль для подтверждения изменений'
+          update: 'Обновить'
+          delete_account: 'Удалить аккаунт'
+          confirm: 'Вы уверены?'
+          back: 'назад'
+        new:
+          header: 'Регистрация'
+          pas_length_one: 'Не менее'
+          pas_length_two: 'символов'
+          sign_up: 'Зарегистрироваться'
+      sessions:
+        new:
+          header: 'Войти на сайт'
+          sign_in: 'Войти'
+      shared:
+        links:
+          sign_in: 'Войти'
+          registartion: 'Регистрация'
+          forgot_password: 'Забыли пароль?'
+
+
+
