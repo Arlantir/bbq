@@ -33,3 +33,39 @@ ru:
   # Перевод app
   name: 'Шашлыки'
   company: 'Не очень хороший программист'
+  # Перевод ошибок
+  errors:
+    messages:
+      one: '%{count} ошибка'
+      few: '%{count} ошибки'
+      many: '%{count} ошибок'
+  # Перевод кнопок
+  helpers:
+    submit:
+      save: 'Сохранить'
+      delete_account: 'Удалить аккаунт'
+      sign_in: 'Войти'
+      sign_up: 'Зарегистрироваться'
+      reset_password: 'Сбросить пароль'
+    data_confirm: 'Вы уверены?'
+  # Перевод линков
+  views:
+    application:
+      profile: 'Профиль'
+      sign_out: 'Выйти'
+      sign_in: 'Войти'
+      registartion: 'Зарегистрироваться'
+    users:
+      back: 'вернуться'
+      update_password: 'Сменить пароль'
+      edit_profile: 'Редактировать профиль'
+    events:
+      edit: 'Изменить'
+      create: 'Создать событие'
+      back: 'вернуться'
+      delete: 'Удалить событие'
+  # Перевод devise
+  devise:
+    sign_in: 'Войти'
+    registartion: 'Регистрация'
+    forgot_password: 'Забыли пароль?'
