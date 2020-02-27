@@ -12,13 +12,13 @@
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div><%= t('.currently') resource.unconfirmed_email %></div>
+        <div><%= t('.currently'); resource.unconfirmed_email %></div>
       <% end %>
 
       <div class="form-group">
         <%= f.label :password, class: 'font-weight-bold' %>
         <% if @minimum_password_length %>
-          <em>(<%= t('.pas_length_one') @minimum_password_length t('.pas_length_two') %>)</em>
+          <em>(<%= t('.pas_length_one') %> <%= @minimum_password_length %> <%= t('.pas_length_two') %>)</em><br />
         <% end %>
         <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
         <small class="form-text text-muted">(<%= t('.field_none') %>)</small>
