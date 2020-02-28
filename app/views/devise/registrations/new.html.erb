@@ -13,7 +13,7 @@
       <div class="form-group">
         <%= f.label :password, class: 'font-weight-bold' %>
         <% if @minimum_password_length %>
-        <em>(<%=  t('pas_length_one'); @minimum_password_length;  t('.pas_length_two') %>)</em>
+        <em>(<%= t('.pas_length_one') %> <%= @minimum_password_length %> <%= t('.pas_length_two') %>)</em>
         <% end %>
         <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
       </div>
