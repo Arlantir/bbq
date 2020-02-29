@@ -154,7 +154,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.0.1)
     thread_safe (0.3.6)
     tzinfo (1.2.6)
@@ -190,7 +189,6 @@ DEPENDENCIES
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
   rails-i18n (~> 6.0.0)
-  sqlite3 (~> 1.4)
   tzinfo-data
   web-console (>= 3.3.0)
   webpacker (~> 4.0)
