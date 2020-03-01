@@ -4,8 +4,10 @@ class SubscriptionsController < ApplicationController
 
   def create
     # Болванка для новой подписки
-    @new_subscription = @event.subscriptions.build(subscription_params)
-    @new_subscription.user = current_user
+    if !current_user
+      @new_subscription = @event.subscriptions.build(subscription_params)
+      @new_subscription.user = current_user
+    end
 
     if @new_subscription.save
       # Если сохранилась, редиректим на страницу самого события
