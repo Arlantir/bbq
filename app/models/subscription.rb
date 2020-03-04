@@ -11,6 +11,8 @@ class Subscription < ApplicationRecord
   # Или один email может использоваться только один раз (если анонимная подписка)
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
 
+  validate :ban_my_event_subscription
+
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
   def user_name
@@ -29,5 +31,9 @@ class Subscription < ApplicationRecord
     else
       super
     end
+  end
+
+  def ban_my_event_subscription
+    errors.add(:subscriptions, 'Вы не можете подписаться на своё событие!') if user_id == event_id
   end
 end
