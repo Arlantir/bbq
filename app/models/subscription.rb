@@ -12,10 +12,7 @@ class Subscription < ApplicationRecord
   validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
 
   validate :ban_invitations, unless: -> { user.present? }
-
-  def ban_invitations
-    errors.add(:user_email, ' не подойдёт!') if User.find_by_email(user_email)
-  end
+  validate :ban_my_event_subscription
 
   # Если есть юзер, выдаем его имя,
   # если нет – дергаем исходный метод
@@ -37,5 +34,11 @@ class Subscription < ApplicationRecord
     end
   end
 
+  def ban_my_event_subscription
+    errors.add(:subscriptions, 'Вы не можете подписаться на своё событие!') if user_id == event_id
+  end
 
+  def ban_invitations
+    errors.add(:user_email, ' не подойдёт!') if User.find_by_email(user_email)
+  end
 end
