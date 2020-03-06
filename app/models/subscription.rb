@@ -34,8 +34,10 @@ class Subscription < ApplicationRecord
     end
   end
 
+  private
+
   def ban_my_event_subscription
-    errors.add(:subscriptions, 'Вы не можете подписаться на своё событие!') if user_id == event_id
+    errors.add(:user_id, I18n.t('activerecord.models.subscription.errors.ban_event_subscription')) if user_id == event_id
   end
 
   def ban_invitations

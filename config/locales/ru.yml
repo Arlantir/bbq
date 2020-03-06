@@ -7,6 +7,8 @@ ru:
       event: 'Событие'
       comment: 'Комментарий'
       subscription: 'Подписаться'
+        errors:
+          ban_event_subscription: 'Вы не можете подписаться на своё событие!'
     # Перевод атрибутов моделей
     attributes:
       user:
