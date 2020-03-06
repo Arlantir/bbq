@@ -37,10 +37,10 @@ class Subscription < ApplicationRecord
   private
 
   def ban_my_event_subscription
-    errors.add(:user_id, I18n.t('activerecord.models.subscription.errors.ban_event_subscription')) if user_id == event_id
+    errors.add(:user_id, I18n.t('errors.messages.ban_event_subscription')) if user_id == event_id
   end
 
   def ban_invitations
-    errors.add(:user_email, ' не подойдёт!') if User.find_by_email(user_email)
+    errors.add(:user_email, I18n.t('errors.messages.ban_invitations')) if User.find_by(email: user_email)
   end
 end
