@@ -36,6 +36,8 @@ class Subscription < ApplicationRecord
   private
 
   def ban_my_event_subscription
-    errors.add(:user_id, I18n.t('activerecord.models.subscription.errors.ban_event_subscription')) if user_id == event_id
+    if user.present?
+      errors.add(:user_id, I18n.t('errors.messages.ban_event_subscription')) if user.id == event.id
+    end
   end
 end
