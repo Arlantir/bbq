@@ -5,6 +5,8 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      comment: 'Комментарий'
+      subscription: 'Подписаться'
     # Перевод атрибутов моделей
     attributes:
       user:
@@ -18,6 +20,12 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+      comment:
+        body: 'Комментарий'
+        user_name: 'Ваше имя'
+      subscription:
+        user_name: 'Ваше имя'
+        user_email: 'Ваш email'
   # Перевод контроллеров
   controllers:
     events:
@@ -47,6 +55,8 @@ ru:
       one: 'В вашей форме %{count} ошибка'
       few: 'В вашей форме %{count} ошибки'
       many: 'В вашей форме %{count} ошибок'
+      ban_event_subscription: 'Вы не можете подписаться на своё событие!'
+      ban_invitations: ' не подойдёт!'
   # Перевод вьюшек
   users:
     show:
