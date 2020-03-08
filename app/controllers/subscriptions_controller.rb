@@ -11,6 +11,8 @@ class SubscriptionsController < ApplicationController
       # Если сохранилась, редиректим на страницу самого события
       redirect_to @event, notice: I18n.t('controllers.subscriptions.created')
     else
+      # сообщение об ошибке, если юзер пытается подписаться на своё событие
+      flash[:error] = @new_subscription.errors.full_messages
       # если ошибки — рендерим шаблон события
       render 'events/show', alert: I18n.t('controllers.subscriptions.error')
     end
