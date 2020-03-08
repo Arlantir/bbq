@@ -2,3 +2,7 @@
   margin-top: -2px;
   height: 20px;
 }
+
+.custom-file-label::after {
+  content: "Обзор";
+}
