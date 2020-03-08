@@ -65,6 +65,7 @@ ru:
       many: 'В вашей форме %{count} ошибок'
       ban_event_subscription: 'Вы не можете подписаться на своё событие!'
       ban_invitations: ' не подойдёт!'
+      extension_whitelist_error: 'не соответствует формату'
   # Перевод вьюшек
   users:
     show:

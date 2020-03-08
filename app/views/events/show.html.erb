@@ -33,16 +33,19 @@
         <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
       </div>
 
-      <div class="event-photo-form">
-        <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="event-photo-form">
+          <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photos.build} %>
+        </div>
+      <% end %>
 
       <div class="event-comments buffer-top">
+        <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
 
-        <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
 
         <div class="buffer-both">
-          <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
+
+          <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
         </div>
       </div>
     </div>
