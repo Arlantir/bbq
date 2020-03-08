@@ -13,9 +13,11 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :avatar, class: 'font-weight-bold' %>
     <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
-    <%= f.file_field :avatar, class: 'form-control-file' %>
+    <div class="custom-file">
+      <%= f.label :avatar, class: 'custom-file-label' %>
+      <%= f.file_field :avatar, class: 'custom-file-input' %>
+    </div>
   </div>
 
   <div class="actions">

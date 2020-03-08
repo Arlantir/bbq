@@ -2,11 +2,14 @@
   <%= render partial: 'partials/form_errors', locals: {model: photo} %>
 
   <div class="form-group">
-    <%= f.label :photo, class: 'font-weight-bold' %>
-    <%= f.file_field :photo, class: 'form-control-file' %>
+    <div class="custom-file">
+      <%= f.label :photo, class: 'custom-file-label' %>
+      <%= f.file_field :photo, class: 'custom-file-input' %>
+    </div>
+
   </div>
 
   <div class="actions">
-    <%= f.submit 'Загрузить', class: 'btn btn-outline-primary' %>
+    <%= f.submit t('photo.form.submit'), class: 'btn btn-outline-primary' %>
   </div>
 <% end %>

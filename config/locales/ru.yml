@@ -97,6 +97,10 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+  photo:
+    photo: 'Добавил '
+    form:
+      submit: 'Загрузить'
   # Перевод devise
   devise:
     passwords:
