@@ -29,6 +29,7 @@ ru:
         user_email: 'Ваш email'
       photo:
         photo: 'Фотография'
+        user: 'Пользователь'
   # Перевод контроллеров
   controllers:
     events:
