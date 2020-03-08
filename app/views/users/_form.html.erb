@@ -15,7 +15,7 @@
   <div class="form-group">
     <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
     <div class="custom-file">
-      <%= f.label :avatar, class: 'custom-file-label' %>
+      <%= f.label :avatar, class: 'custom-file-label text-truncate' %>
       <%= f.file_field :avatar, class: 'custom-file-input' %>
     </div>
   </div>
