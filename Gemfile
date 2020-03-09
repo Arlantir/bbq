@@ -13,8 +13,10 @@ gem 'devise-i18n'
 gem 'rails-i18n', '~> 6.0.0'
 
 gem 'pg'
+
 gem 'carrierwave', '~> 2.0'
 gem 'rmagick'
+gem 'fog-aws'
 
 gem 'bootsnap', '>= 1.4.2', require: false
 
