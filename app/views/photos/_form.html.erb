@@ -1,0 +1,15 @@
+<%= form_for [@event, photo], html: { multipart: true } do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: photo} %>
+
+  <div class="form-group">
+    <div class="custom-file">
+      <%= f.label :photo, class: 'custom-file-label' %>
+      <%= f.file_field :photo, class: 'custom-file-input' %>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('photo.form.submit'), class: 'btn btn-outline-primary' %>
+  </div>
+<% end %>

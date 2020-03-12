@@ -7,11 +7,13 @@ ru:
       event: 'Событие'
       comment: 'Комментарий'
       subscription: 'Подписаться'
+      photo: 'Фотография'
     # Перевод атрибутов моделей
     attributes:
       user:
         email: 'Email'
         name: 'Имя'
+        avatar: 'Аватарка'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
       event:
@@ -25,6 +27,9 @@ ru:
       subscription:
         user_name: 'Ваше имя'
         user_email: 'Ваш email'
+      photo:
+        photo: 'Фотография'
+        user: 'Пользователь'
   # Перевод контроллеров
   controllers:
     events:
@@ -41,6 +46,10 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
   # Перевод app
   name: 'Шашлыки'
   company: 'Не очень хороший программист'
@@ -55,6 +64,8 @@ ru:
       few: 'В вашей форме %{count} ошибки'
       many: 'В вашей форме %{count} ошибок'
       ban_event_subscription: ' не можете подписаться на своё событие!'
+      ban_invitations: ' не подойдёт!'
+      extension_whitelist_error: 'не соответствует формату'
   # Перевод вьюшек
   users:
     show:
@@ -88,6 +99,10 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+  photo:
+    photo: 'Добавил '
+    form:
+      submit: 'Загрузить'
   # Перевод devise
   devise:
     passwords:
