@@ -27,6 +27,7 @@ ru:
       subscription:
         user_name: 'Ваше имя'
         user_email: 'Ваш email'
+        user: 'Пользователь'
       photo:
         photo: 'Фотография'
         user: 'Пользователь'
@@ -66,6 +67,7 @@ ru:
       ban_event_subscription: ' не можете подписаться на своё событие!'
       ban_invitations: ' не подойдёт!'
       extension_whitelist_error: 'не соответствует формату'
+
   # Перевод вьюшек
   users:
     show:
