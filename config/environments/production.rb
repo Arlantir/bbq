@@ -1,3 +1,6 @@
+require 'rest-client'
+require 'json'
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -123,13 +126,28 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :smtp
 
   # А это для SendGrid
+  #  TODO они там неадекватные, банят сразу при добавлении аддона на хероку
+  # ActionMailer::Base.smtp_settings = {
+  #   :user_name => ENV['SENDGRID_USERNAME'],
+  #   :password => ENV['SENDGRID_PASSWORD'],
+  #   :domain => 'megobbq.herokuapp.com',
+  #   :address => 'smtp.sendgrid.net',
+  #   :port => 587,
+  #   :authentication => :plain,
+  #   :enable_starttls_auto => true
+  # }
+
+  # А это для Mailtrap
+  response = RestClient.get "https://mailtrap.io/api/v1/inboxes.json?api_token=#{ENV['MAILTRAP_API_TOKEN']}"
+
+  first_inbox = JSON.parse(response)[0] # get first inbox
+
   ActionMailer::Base.smtp_settings = {
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'megobbq.herokuapp.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    :user_name => first_inbox['username'],
+    :password => first_inbox['password'],
+    :address => first_inbox['domain'],
+    :domain => first_inbox['domain'],
+    :port => first_inbox['smtp_ports'][0],
+    :authentication => :plain
   }
 end
