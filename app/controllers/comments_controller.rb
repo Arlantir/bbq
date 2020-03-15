@@ -43,8 +43,10 @@ class CommentsController < ApplicationController
 
   def notify_subscribers(event, comment)
     # Собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся
-    if comment.user_id == current_user.id
-      all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [current_user.email]).uniq
+    if comment.user_id.nil?
+      all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
+    else
+      all_emails = ((event.subscriptions.map(&:user_email) + [event.user.email]) - [comment.user.email]).uniq
     end
 
     # По адресам из этого массива делаем рассылку
