@@ -2,6 +2,8 @@ class Comment < ApplicationRecord
   belongs_to :event
   belongs_to :user, optional: true
 
+  scope :sorted, -> { order(created_at: :desc) }
+
   validates :event, presence: true
   validates :body, presence: true
 
