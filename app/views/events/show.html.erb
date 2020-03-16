@@ -40,12 +40,14 @@
       <% end %>
 
       <div class="event-comments buffer-top">
-        <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
 
         <div class="buffer-both">
-
           <%= render partial: 'comments/form', locals: {comment: @new_comment || @event.comments.build} %>
         </div>
+
+        <%= render partial: 'comments/comment', collection: @event.comments.except(@new_comment) %>
+
+
       </div>
     </div>
     <div class="col-md-4">
