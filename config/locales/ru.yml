@@ -126,12 +126,14 @@ ru:
       author: 'Автор'
       event: 'Событие'
       datetime: 'Состоится'
+      datetime_off: 'Уже состоялось'
       owner: 'Организатор'
     photo:
       title: 'Добавлена новая фотография'
       author: 'Автор'
       event: 'Событие'
       datetime: 'Состоится'
+      datetime_off: 'Уже состоялось'
       owner: 'Организатор'
   # Перевод devise
   devise:
