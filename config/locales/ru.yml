@@ -21,6 +21,7 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+        pincode: 'Пин-код доступа'
       comment:
         body: 'Комментарий'
         user_name: 'Ваше имя'
@@ -37,6 +38,7 @@ ru:
       created: 'Вы создали новое мероприятие'
       updated: 'Вы обновили мроприятие'
       destroyed: 'Вы удалили мероприятие :('
+      wrong_pincode: 'Неверный пин-код!'
     users:
       updated: 'Вы обновили свой профиль'
     comments:
@@ -84,6 +86,11 @@ ru:
     form:
       submit: 'Сохранить'
       back: 'вернуться'
+    password_form:
+      header: 'Доступ только по пин-коду'
+      label: 'Пин-код'
+      submit: 'Ввести'
+      back: 'На главную'
     edit:
       header: 'Редактирование события'
     index:
