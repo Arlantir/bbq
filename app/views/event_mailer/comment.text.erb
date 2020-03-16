@@ -7,5 +7,5 @@
 
 --------------------------------
 <%= t('.event') %>: <%= @event.title %>
-<%= t('.datetime') %>: <%= l(@event.datetime) %>
+<%= Time.now < @event.datetime ? t('.datetime') : t('.datetime_off') %>: <%= l(@event.datetime) %>
 <%= t('.owner') %>: <%= @event.user.name %>

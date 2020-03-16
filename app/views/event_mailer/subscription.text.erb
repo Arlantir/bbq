@@ -7,5 +7,5 @@ Email: <%=  @email %>
 ----------------------
 
 Событие: <%= @event.title %>
-Состоится: <%= l(@event.datetime) %>
+<%= Time.now < @event.datetime ? t('.datetime') : t('.datetime_off') %>: <%= l(@event.datetime) %>
 Организатор: <%= @event.user.name %>
