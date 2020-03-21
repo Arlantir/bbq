@@ -38,6 +38,14 @@
   background:rgba(0, 0, 0, 0.4);
 }
 
+.event-photos-gallery {
+  padding-bottom: 10px;
+}
+
+img {
+  padding-bottom: 5px;
+}
+
 .event-map {
   margin: 20px 0;
   width: 100%;

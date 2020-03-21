@@ -16,3 +16,10 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 import '../stylesheets/application'
 import '../packs/map'
+import 'ekko-lightbox/dist/ekko-lightbox'
+
+// Для фотогалереи
+$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});
