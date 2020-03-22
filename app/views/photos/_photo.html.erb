@@ -1,6 +1,3 @@
-<% image_title = t('photo.photo'), " #{render partial: 'users/user', object: photo.user}", link_to(
-    fa_icon('trash'), event_photo_path(photo.event, photo), method: :delete, data: {confirm: t('photo.confirm')}) %>
-
 <%= link_to image_tag(photo.photo.thumb.url), photo.photo.url, data: {
-    toggle: 'lightbox', fa_icon: 'trash', title: image_title, gallery: 'event-photos'
+    toggle: 'lightbox', title: image_title(photo), gallery: 'event-photos'
 } %>
