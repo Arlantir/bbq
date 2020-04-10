@@ -4,7 +4,6 @@
 // that code so it'll be compiled.
 
 require("bootstrap/dist/js/bootstrap")
-require('jquery')
 require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
