@@ -2,7 +2,7 @@
 lock "~> 3.13.0"
 
 # Это имя приложения
-set :application, 'myapp'
+set :application, 'BBQ'
 # Это url вашего репозитория, откуда Capistrano
 # будет брать свежие версии исходников
 set :repo_url, 'git@github.com:Arlantir/bbq.git'
