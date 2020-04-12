@@ -27,6 +27,13 @@ group :development, :test do
 end
 
 group :development do
+  # для деплоя
+  gem 'capistrano', '~> 3.13', require: false
+  gem 'capistrano-rails', '~> 1.4', require: false
+  gem 'capistrano-passenger'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-bundler', '~> 1.6'
+
   gem 'foreman'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
