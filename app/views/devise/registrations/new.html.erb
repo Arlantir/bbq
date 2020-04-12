@@ -11,6 +11,11 @@
       </div>
 
       <div class="form-group">
+        <%= f.label :name, class: 'font-weight-bold' %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :password, class: 'font-weight-bold' %>
         <% if @minimum_password_length %>
         <em>(<%= t('.pas_length_one') %> <%= @minimum_password_length %> <%= t('.pas_length_two') %>)</em>
