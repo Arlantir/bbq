@@ -9,16 +9,21 @@ RSpec.describe EventPolicy, type: :policy do
   context 'when user in not an owner' do
     let(:event) { Event.create(title: 'Шашлыки') }
 
-    # юзер может видеть событие
+    # только залогиненый юзер может зайти в событие
     permissions :show? do
-      it { is_expected.to permit(user, Event) }
+      it { is_expected.to permit(user, event) }
       it { is_expected.not_to permit(nil, Event) }
     end
 
-    # если юзеру не принадлежит событие или он не залогинен, то он не может его редактировать
-    permissions :edit?, :update?, :destroy? do
-      it { is_expected.not_to permit(user, event) }
+    # только залогиненый юзер может создать событие
+    permissions :create? do
+      it { is_expected.to permit(user, event) }
       it { is_expected.not_to permit(nil, Event) }
+    end
+
+    # залогиненый юзер не может редактировать чужое событие
+    permissions :edit?, :update?, :destroy? do
+      it { is_expected.not_to permit(user, Event) }
     end
   end
 

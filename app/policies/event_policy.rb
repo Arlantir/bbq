@@ -3,6 +3,10 @@ class EventPolicy < ApplicationPolicy
     user.present?
   end
 
+  def create?
+    user.present?
+  end
+
   def update?
     user_is_owner?(record)
   end
