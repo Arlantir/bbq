@@ -1,6 +1,6 @@
 class EventPolicy < ApplicationPolicy
   def show?
-    user.present?
+    user.nil? || user.present?
   end
 
   def create?
