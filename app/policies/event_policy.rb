@@ -8,7 +8,7 @@ class EventPolicy < ApplicationPolicy
   end
 
   def update?
-    user_is_owner?(record)
+    edit?
   end
 
   def edit?
