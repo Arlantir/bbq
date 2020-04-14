@@ -1,6 +1,10 @@
 class EventPolicy < ApplicationPolicy
   def show?
-    user.nil? || user.present?
+    true
+  end
+
+  def new?
+    create?
   end
 
   def create?
@@ -8,11 +12,11 @@ class EventPolicy < ApplicationPolicy
   end
 
   def update?
-    edit?
+    user_is_owner?(record)
   end
 
   def edit?
-    user_is_owner?(record)
+    update?
   end
 
   def destroy?
