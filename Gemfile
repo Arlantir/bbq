@@ -14,6 +14,8 @@ gem 'rails-i18n', '~> 6.0.0'
 
 gem 'pundit'
 
+gem 'resque'
+
 gem 'pg'
 
 gem 'carrierwave', '~> 2.0'
@@ -36,6 +38,7 @@ group :development do
   gem 'capistrano-passenger'
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-bundler', '~> 1.6'
+  gem "capistrano-resque", "~> 0.2.3", require: false
 
   gem 'foreman'
   gem 'web-console', '>= 3.3.0'
