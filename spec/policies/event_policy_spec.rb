@@ -21,13 +21,8 @@ RSpec.describe EventPolicy, type: :policy do
   context 'when there is a user' do
     let(:user) { FactoryBot.build_stubbed(:user) }
 
-    # залогиненый юзер может видеть события
-    permissions :show? do
-      it { is_expected.to permit(user, event) }
-    end
-
-    # залогиненый юзер может создать событие
-    permissions :create? do
+    # залогиненый юзер может видеть события и создавать новые
+    permissions :show?, :create?do
       it { is_expected.to permit(user, event) }
     end
 
