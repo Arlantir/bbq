@@ -2,7 +2,7 @@
 lock "~> 3.13.0"
 
 # Это имя приложения
-set :application, 'bbq'
+set :application, 'kuda-edem'
 # Это url вашего репозитория, откуда Capistrano
 # будет брать свежие версии исходников
 set :repo_url, 'git@github.com:Arlantir/bbq.git'
