@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @new_comment.user = current_user
 
     if @new_comment.save
-      notify_subscribers(@event, @new_comment)
+      NotifyJob.perform_later(@event, @new_comment)
 
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else
@@ -39,21 +39,5 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:body, :user_name)
-  end
-
-  def notify_subscribers(event, comment)
-    # Собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся
-    if comment.user_id.nil?
-      all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
-    else
-      all_emails = ((event.subscriptions.map(&:user_email) + [event.user.email]) - [comment.user.email]).uniq
-    end
-
-    # По адресам из этого массива делаем рассылку
-    # Как и в подписках, берём EventMailer и его метод comment с параметрами
-    # И отсылаем в том же потоке
-    all_emails.each do |mail|
-      EventMailer.comment(event, comment, mail).deliver_later
-    end
   end
 end
