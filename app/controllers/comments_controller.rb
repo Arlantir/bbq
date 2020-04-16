@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @new_comment.user = current_user
 
     if @new_comment.save
-      NotifyJob.perform_later(@event, @new_comment)
+      NotifyJob.perform_later(@new_comment)
 
       redirect_to @event, notice: I18n.t('controllers.comments.created')
     else

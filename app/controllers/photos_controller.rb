@@ -12,7 +12,7 @@ class PhotosController < ApplicationController
     @new_photo.user = current_user
 
     if @new_photo.save
-      NotifyJob.perform_later(@event, @new_photo)
+      NotifyJob.perform_later(@new_photo)
 
       # Если фотка сохранилась, редиректим на событие с сообщением
       redirect_to @event, notice: I18n.t('controllers.photos.created')

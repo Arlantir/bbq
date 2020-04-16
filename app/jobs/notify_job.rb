@@ -1,7 +1,9 @@
 class NotifyJob < ApplicationJob
   queue_as :default
 
-  def perform(event, object)
+  def perform(object)
+    event = object.event
+
     emails = (event.subscribers.map(&:email) + [event.user.email] - [object.user&.email]).uniq
 
     case object
