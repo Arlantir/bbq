@@ -24,6 +24,9 @@ gem 'fog-aws'
 
 gem 'dotenv-rails'
 
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do

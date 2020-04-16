@@ -176,6 +176,7 @@ ru:
         registartion: 'Регистрация'
         forgot_password: 'Забыли пароль?'
         confirm: 'Не получили подтверждение инструкции?'
+        omni: 'Войти с помощью'
     confirmation:
       new:
         header: 'Отправить подтверждение снова'
