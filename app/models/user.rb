@@ -19,7 +19,7 @@ class User < ApplicationRecord
     devise_mailer.send(notification, self, *args).deliver_later
   end
 
-  def self.find_for_facebook_oauth(access_token)
+  def self.find_for_oauth(access_token, oauth)
     # Достаём email из токена
     email = access_token.info.email
     user = where(email: email).first
@@ -30,32 +30,12 @@ class User < ApplicationRecord
     # Если не нашёлся, достаём провайдера, айдишник и урл
     provider = access_token.provider
     id = access_token.extra.raw_info.id
-    url = "https://facebook.com/#{id}"
 
-    # Теперь ищем в базе запись по провайдеру и урлу
-    # Если есть, то вернётся, если нет, то будет создана новая
-    where(url: url, provider: provider).first_or_create! do |user|
-      # Если создаём новую запись, прописываем email и пароль
-      user.email = email
-      user.password = Devise.friendly_token.first(16)
+    if oauth == 'facebook'
+      url = "https://facebook.com/#{id}"
+    else
+      url = "https://vk.com/id#{id}"
     end
-  end
-
-  def self.find_for_vkontakte_oauth(access_token)
-    # выходим из метода и возвращаем nil
-    return if access_token.info.email.nil?
-
-    # Достаём email из токена
-    email = access_token.info.email
-    user = where(email: email).first
-
-    # Возвращаем, если нашёлся
-    return user if user.present?
-
-    # Если не нашёлся, достаём провайдера, айдишник и урл
-    provider = access_token.provider
-    id = access_token.extra.raw_info.id
-    url = "https://vk.com/id#{id}"
 
     # Теперь ищем в базе запись по провайдеру и урлу
     # Если есть, то вернётся, если нет, то будет создана новая
