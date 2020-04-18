@@ -31,10 +31,9 @@ class User < ApplicationRecord
     provider = access_token.provider
     id = access_token.extra.raw_info.id
 
-    if oauth == 'facebook'
-      url = "https://facebook.com/#{id}"
-    else
-      url = "https://vk.com/id#{id}"
+    case oauth
+    when 'facebook' then url = "https://facebook.com/#{id}"
+    when 'vkontakte' then url = "https://vk.com/id#{id}"
     end
 
     # Теперь ищем в базе запись по провайдеру и урлу
