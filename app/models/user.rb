@@ -32,8 +32,12 @@ class User < ApplicationRecord
     id = access_token.extra.raw_info.id
 
     case oauth
-    when 'facebook' then url = "https://facebook.com/#{id}"
-    when 'vkontakte' then url = "https://vk.com/id#{id}"
+    when 'facebook'
+      url = "https://facebook.com/#{id}"
+      avatar_url = access_token.info.image
+    when 'vkontakte'
+      url = "https://vk.com/id#{id}"
+      avatar_url = access_token.extra.raw_info.photo_200
     end
 
     # Теперь ищем в базе запись по провайдеру и урлу
@@ -41,6 +45,7 @@ class User < ApplicationRecord
     where(url: url, provider: provider).first_or_create! do |user|
       # Если создаём новую запись, прописываем email и пароль
       user.email = email
+      user.remote_avatar_url = avatar_url
       user.password = Devise.friendly_token.first(16)
     end
   end
