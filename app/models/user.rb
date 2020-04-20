@@ -49,6 +49,7 @@ class User < ApplicationRecord
       user.email = email
       user.remote_avatar_url = avatar_url
       user.password = Devise.friendly_token.first(16)
+      user.skip_confirmation!
     end
   end
 
