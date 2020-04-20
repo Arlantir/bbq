@@ -23,7 +23,7 @@ class User < ApplicationRecord
     # Достаём email из токена
     email = access_token.info.email
     user = where(email: email).first
-    binding.pry
+
     # Возвращаем, если нашёлся
     return user if user.present?
 
