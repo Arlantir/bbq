@@ -1,24 +1,71 @@
-# README
+# Гоу на шашлыки!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ Учебное приложение — организатор событий на rails 6.0.2.1.
+ 
+ Рассчитано на работу с Heroku.
+ 
+ Предназначено для освоения работы с загрузкой файлов, аутентификацией, авторизацией, гемами devise, carrierwave
+ , фреймворком bootstrap, очередями worker resque, redis.
+ 
+ Учит также основам работы с локализацией и YML файлами.
+ 
+ При желании может быть взято за основу для полезного и серьезного проекта.
+ 
+ Демо
+ 
+ [https://kuda-edem.com/](https://kuda-edem.com/)
+ 
+ Установка
+ 
+ Для разворачивания своей копии клонируйте гит репозиторий (зеленая кнопочка в правом верхнем углу на гитхабе), залейте на свое приложение на Heroku (или создайте новое heroku create). Также поправьте урл сайта в production.rb.
+ 
+ Для работы на хероку:
+ 
+1.Должен быть подключен SendGrid;
+ 
+2.Настроены переменный окружения:
+ 
+ Для карты:
+```
+ MAPS_API_KEY="Ваш апи ключ"
+```
+Для аукнтификации в ФБ и ВК:
 
-Things you may want to cover:
+```
+ FACEBOOK_ID="Ваш апи ключ"
+ FACEBOOK_SECRET="Ваш апи ключ"
+ VK_API_ID="Ваш апи ключ"
+ VK_API_SECRET="Ваш апи ключ"
+```
+3.Включить аддон Redis
 
-* Ruby version
+4.Настроить job [resque][3]
 
-* System dependencies
+ Для работы локальной машине:
+ 
+ 1.Установлен gem [dotenv][1], в него прописываются все необходимые переменные окружения;
+ 
+ 2.Настройка переменных окружения:
+ 
+ Для карты:
+```
+ MAPS_API_KEY="Ваш апи ключ"
+```
+Для аукнтификации в ФБ и ВК:
 
-* Configuration
+```
+ FACEBOOK_ID="Ваш апи ключ"
+ FACEBOOK_SECRET="Ваш апи ключ"
+ VK_API_ID="Ваш апи ключ"
+ VK_API_SECRET="Ваш апи ключ"
+```
 
-* Database creation
+3.Установлен gem [foreman][2], запуск приложения происходит с его помощью;
 
-* Database initialization
+4.Установить Redis;
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ 
+ [1]: https://github.com/bkeepers/dotenv
+ [2]: https://github.com/ddollar/foreman
+ [3]: https://github.com/resque/resque
