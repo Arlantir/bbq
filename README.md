@@ -53,6 +53,8 @@ VK_API_SECRET="Ваш апи ключ"
 
 `QUEUE=tubilinkz* bundle exec rake environment
  resque:work`
+ 
+7.В браузере перейти по адресу `localhost:5000`
 
 
 
