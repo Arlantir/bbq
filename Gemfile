@@ -48,6 +48,7 @@ group :development do
   gem "capistrano-resque", "~> 0.2.3", require: false
 
   gem 'foreman'
+  gem 'letter_opener'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
 end
