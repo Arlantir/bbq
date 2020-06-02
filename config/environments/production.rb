@@ -3,7 +3,7 @@ Rails.application.configure do
   #
   config.active_job.queue_adapter = :resque
 # Префикс для имени очередей
-  config.active_job.queue_name_prefix = "kuda-edem_#{Rails.env}"
+  config.active_job.queue_name_prefix = "megobbq.herokuapp_#{Rails.env}"
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -115,7 +115,7 @@ Rails.application.configure do
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
   # Базовый URL сайта для правильных ссылок в письмах
-  config.action_mailer.default_url_options = {host: 'kuda-edem.com'}
+  config.action_mailer.default_url_options = {host: 'megobbq.herokuapp.com'}
 
   # Ошибки рассылки юзеру не показываем
   config.action_mailer.raise_delivery_errors = false
@@ -131,7 +131,7 @@ Rails.application.configure do
   ActionMailer::Base.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
-    domain: 'kuda-edem.com',
+    domain: 'megobbq.herokuapp.com',
     address: 'smtp.sendgrid.net',
     port: 587,
     authentication: :plain,
