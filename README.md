@@ -7,7 +7,7 @@
 
 **Демо**
 
-[https://kuda-edem.com/](https://kuda-edem.com/)
+[https://megobbq.herokuapp.com/](https://megobbq.herokuapp.com/)
 
 **Установка**
  
