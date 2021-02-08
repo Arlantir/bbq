@@ -18,7 +18,7 @@ gem 'resque'
 
 gem 'pg'
 
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'rmagick'
 gem 'fog-aws'
 
